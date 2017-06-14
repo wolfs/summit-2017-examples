@@ -1,5 +1,7 @@
 ext.timestamp = new Date().time
 
+apply from: 'gradle/buildScan.gradle'
+
 subprojects {
     apply plugin: 'java-library'
     sourceCompatibility = 8
