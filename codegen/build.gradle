@@ -1,0 +1,13 @@
+plugins {
+    id 'java'
+    id 'antlr'
+}
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    antlr "org.antlr:antlr:3.5.2"
+    testCompile 'junit:junit:4.12'
+}

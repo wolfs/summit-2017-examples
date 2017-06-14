@@ -1,0 +1,14 @@
+# Gradle
+# ------
+.gradle
+build/
+
+# IDEA
+/*.iml
+/*.ipr
+/*.iws
+.idea/
+!/.idea/vcs.xml
+
+# Mac OS
+.DS_Store
