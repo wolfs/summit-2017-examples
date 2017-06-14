@@ -1,0 +1,9 @@
+plugins {
+    id 'application'
+}
+
+dependencies {
+    implementation project(':build-info')
+}
+
+mainClassName = 'com.example.application.Main'

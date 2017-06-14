@@ -1,1 +1,1 @@
-include 'codegen'
+include 'codegen', 'build-info', 'application'
