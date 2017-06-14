@@ -4,6 +4,7 @@ plugins {
 
 dependencies {
     implementation project(':build-info')
+    implementation project(':codegen')
 }
 
 mainClassName = 'com.example.application.Main'
