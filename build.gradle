@@ -16,4 +16,8 @@ subprojects {
     dependencies {
         testCompile "junit:junit:4.12"
     }
+
+    tasks.withType(Jar) { jar ->
+        jar.version = baseVersion
+    }
 }
