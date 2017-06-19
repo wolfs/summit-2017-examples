@@ -2,7 +2,7 @@ task buildInfo {
     ext.buildInfoFile = file("${buildDir}/generated-resources/build-info.properties")
     outputs.file buildInfoFile
     inputs.property('currentTime') {
-        new Date()
+        timestamp
     }
     group 'build'
     doLast {

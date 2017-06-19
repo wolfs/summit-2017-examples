@@ -1,4 +1,8 @@
-ext.timestamp = new Date().time
+import java.time.Instant
+
+ext.isOnCi = System.getenv().containsKey('CI')
+//ext.timestamp = isOnCi ? ZonedDateTime.now().toInstant().toEpochMilli() : LocalDate.now().atStartOfDay().atZone(ZoneId.systemDefault()).toInstant().toEpochMilli()
+ext.timestamp = Instant.now().toEpochMilli()
 
 apply from: 'gradle/buildScan.gradle'
 
@@ -14,7 +18,7 @@ subprojects {
     }
 
     dependencies {
-        testCompile "junit:junit:4.12"
+        testImplementation "junit:junit:4.12"
     }
 
     tasks.withType(Jar) { jar ->

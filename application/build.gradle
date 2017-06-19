@@ -14,3 +14,9 @@ normalization {
         ignore 'build-info.properties'
     }
 }
+
+test {
+    ext.integrationTestSamples = file('src/integration-test-samples')
+    environment.INTEGRATION_TEST_SAMPLES = integrationTestSamples.absolutePath
+    inputs.dir(integrationTestSamples).withPathSensitivity(PathSensitivity.NONE)
+}
