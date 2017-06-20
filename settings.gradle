@@ -1,3 +1,11 @@
 include 'codegen', 'build-info', 'application'
 
 rootProject.name = 'summit-2017-examples'
+
+buildCache {
+    local {
+        push = !Boolean.getBoolean('cache.push.disabled')
+    }
+
+    // TODO: configure remote cache for summit
+}
