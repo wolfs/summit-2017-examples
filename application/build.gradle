@@ -5,6 +5,9 @@ plugins {
 dependencies {
     implementation project(':build-info')
     implementation project(':codegen')
+    testImplementation('com.github.stefanbirkner:system-rules:1.16.0') {
+        exclude group: 'junit'
+    }
 }
 
 mainClassName = 'com.example.application.Main'
