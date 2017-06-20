@@ -12,14 +12,7 @@ dependencies {
 
 mainClassName = 'com.example.application.Main'
 
-normalization {
-    runtimeClasspath {
-        ignore 'build-info.properties'
-    }
-}
-
 test {
     def integrationTestSamples = file('src/integration-test-samples')
     environment.INTEGRATION_TEST_SAMPLES = integrationTestSamples.absolutePath
-    inputs.dir(integrationTestSamples).withPathSensitivity(PathSensitivity.NONE)
 }

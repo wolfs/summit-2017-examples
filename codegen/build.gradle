@@ -6,11 +6,3 @@ dependencies {
     antlr "org.antlr:antlr:3.5.2"
     testCompile 'junit:junit:4.12'
 }
-
-tasks.withType(AntlrTask) {
-    doLast {
-        fileTree(outputDirectory).include('**/*.java').each { file ->
-            file.text = file.readLines().tail().join('\n')
-        }
-    }
-}
