@@ -1,10 +1,12 @@
 import java.time.Instant
 
+plugins {
+    id "com.gradle.build-scan" version "1.8"
+}
+
 ext.isOnCi = System.getenv().containsKey('CI')
 //ext.timestamp = isOnCi ? ZonedDateTime.now().toInstant().toEpochMilli() : LocalDate.now().atStartOfDay().atZone(ZoneId.systemDefault()).toInstant().toEpochMilli()
 ext.timestamp = Instant.now().toEpochMilli()
-
-apply from: 'gradle/buildScan.gradle'
 
 subprojects {
     apply plugin: 'java-library'
@@ -24,4 +26,9 @@ subprojects {
     tasks.withType(Jar) { jar ->
         jar.version = baseVersion
     }
+}
+
+buildScan {
+    publishAlways()
+    server = "https://enterprise-demo.gradle.com"
 }
